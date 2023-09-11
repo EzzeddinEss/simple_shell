@@ -15,5 +15,9 @@
 int _putchar(char c);
 int _strlen(char *s);
 void _puts(char *str);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
+int _strcmp(char *s1, char *s2, int n);
+
 
 #endif
