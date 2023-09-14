@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _strtok: tokenize a given string.
+ * _strtok - tokenize a given string.
  * @line: the line to be modified.
  * @stk: an array of strings
  * Return: a pointer to the first token that found
