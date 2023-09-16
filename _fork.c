@@ -5,7 +5,7 @@
  * @av: array of string
  * @argv: array of strings
  * @envp: array of strings environments
- * Return: Zero
+ * Return: None
 */
 void _fork(char *stk[], char *av[], char *argv[])
 {
