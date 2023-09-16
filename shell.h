@@ -22,5 +22,6 @@ char *_strdup(char *str);
 char *_strchr(const char *str, int c);
 char **_strtok(char *line, char *stk[]);
 int main(int argc, char *argv[]);
+void _fork(char *stk[], char *av[], char *argv[])
 
 #endif
