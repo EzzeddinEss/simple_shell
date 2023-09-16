@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * _strcmp - Compares two strings up to a specified number of bytes
  * @s1: First input string

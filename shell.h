@@ -21,5 +21,6 @@ int _strcmp(char *s1, char *s2, int n);
 char *_strdup(char *str);
 char *_strchr(const char *str, int c);
 char **_strtok(char *line, char *stk[]);
+int main(int argc, char *argv[]);
 
 #endif
