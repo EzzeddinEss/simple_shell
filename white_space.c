@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * test_white_space - tests if the str is whitespace or new line
  * or tab or return
