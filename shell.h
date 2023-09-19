@@ -27,5 +27,6 @@ char *_getline(char *lineptr);
 int test_white_space(const char *str);
 char *_getenv(char *name, char **envp);
 void print_prompt(void);
+void exe(char **stk, char *envp[], char *argv[], char *line);
 
 #endif

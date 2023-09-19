@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * print_prompt - Prints the prompt to indicate the program is ready for input
  */
