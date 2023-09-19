@@ -25,5 +25,6 @@ int main(int argc, char *argv[]);
 void _fork(char *stk[], char *av[], char *argv[])
 char *_getline(char *lineptr);
 int test_white_space(const char *str);
+char *_getenv(char *name, char **envp);
 
 #endif
