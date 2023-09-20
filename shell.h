@@ -28,5 +28,7 @@ int test_white_space(const char *str);
 char *_getenv(char *name, char **envp);
 void print_prompt(void);
 void exe(char **stk, char *envp[], char *argv[], char *line);
+char *_which(char *command, char **env);
+void hight(int no);
 
 #endif
