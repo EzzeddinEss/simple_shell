@@ -1,21 +1,21 @@
 #include "shell.h"
 /**
- * _fork - fork and execve
+ * _fork - Forks and executes a command using execve
  * @stk: array of string
  * @av: array of string
  * @argv: array of strings
  * @envp: array of strings environments
  * Return: None
 */
-void _fork(char *stk[], char *av[], char *argv[])
+void _fork(char *stk[], char *av[], char *envp[], char *argv[])
 {
 	pid_t pid;
-	int status;
+	int a;
 
 	pid = fork();
 	if (pid == 0)
 	{
-		execve(stk[0], av);
+		execve(stk[0], av, envp);
 		perror(argv[0]);
 		exit(1);
 	}
@@ -26,7 +26,7 @@ void _fork(char *stk[], char *av[], char *argv[])
 	}
 	else
 	{
-		wait(&status);
+		wait(&a);
 	}
 }
 

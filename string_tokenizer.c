@@ -8,8 +8,9 @@
  */
 char *strtokenize(char *line, char delimiter)
 {
-    char *token;
+	char *token;
 
-    token = strtok(line, &delimiter);
-    return (token);
+	token = strtok(line, &delimiter);
+	return (token);
 }
+

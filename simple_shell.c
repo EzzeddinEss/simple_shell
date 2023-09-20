@@ -15,7 +15,7 @@ int main(int argc __attribute__((unused)), char *argv[], char **envp)
 	signal(SIGINT, hight);
 	while (1)
 	{
-		enter_cmd();
+		print_prompt();
 		line = _getline(line);
 		if (line == NULL)
 			break;
