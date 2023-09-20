@@ -31,5 +31,6 @@ void exe(char **stk, char *envp[], char *argv[], char *line);
 char *_which(char *command, char **env);
 void hight(int no);
 int simicolen(char *line, char *envp[], char *argv[]);
+char *strtokenize(char *line, char delimiter);
 
 #endif
