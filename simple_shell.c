@@ -1,33 +1,52 @@
 #include "shell.h"
 
 /**
- * main - entry point for simple shell
- * @argc: argument counts.
- * @argv: an array of strings.
- * Return: 0 or -1.
+ * main - Simple shell function entery point
+ * @argv: array of strings
+ * @argc: number of arguments
+ * @envp: array of strings environments
+ * Return: 0 or -1
  */
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[], char **envp)
 {
-	char *stk[10], *av[] = {NULL}, *line = NULL;
-	int space;
-	
-	if (argc != 1)
-	{
-		return (0);
-	}
+	char *stk[10], *line = NULL, *cmd = NULL, *av[] = {NULL};
+	int ext, space;
+
+	signal(SIGINT, hight);
 	while (1)
 	{
-		_puts("$ ");
+		enter_cmd();
 		line = _getline(line);
-		space = test_white_space(line);
-		if (space == 1)
+		if (line == NULL)
+			break;
+		if (line[0] == '#')
+			continue;
+		line = strtok(line, "#");
+		if (_strchr(line, ';') != NULL || line[0] == ';')
 		{
-			stk[0] = "\n";
+			simicolen(line, envp, argv);
 			continue;
 		}
-		_strtok(line, stk);
-		_fork2(stk, av, argv);
+		space = test_white_space(line);
+		if (space == 1)
+			continue;
+		ext = shexit(line);
+		if (ext == 0)
+		{
+			free(cmd);
+			free(line);
+			exit(0);
+		}
+		cmd = _which(line, envp);
+		if (cmd == NULL)
+		{
+			_fork(stk, av, envp, argv);
+			continue;
+		}
+		_strtok(cmd, stk);
+		_fork(stk, stk, envp, argv);
 	}
+	free(cmd);
 	free(line);
 	return (0);
 }
